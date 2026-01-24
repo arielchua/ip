@@ -1,0 +1,45 @@
+CC:---------------------------------------
+Hi! I'm ChuaChua
+How can I help you?
+CC:---------------------------------------
+Okay, I've added the task:
+  [T][ ] borrow book
+Now you have 1 tasks in the list
+CC:---------------------------------------
+Here are the tasks in your list:
+1. [T][ ] borrow book
+Now you have 1 tasks in the list
+CC:---------------------------------------
+Okay, I've added the task:
+  [D][ ] return book (by:Sunday)
+Now you have 2 tasks in the list
+CC:---------------------------------------
+Okay, I've added the task:
+  [E][ ] project meeting (from: Mon 2pm to:4pm)
+Now you have 3 tasks in the list
+CC:---------------------------------------
+Here are the tasks in your list:
+1. [T][ ] borrow book
+2. [D][ ] return book (by:Sunday)
+3. [E][ ] project meeting (from: Mon 2pm to:4pm)
+Now you have 3 tasks in the list
+CC:---------------------------------------
+Great! I've marked this task as done:
+[D][X] return book (by:Sunday)
+CC:---------------------------------------
+Here are the tasks in your list:
+1. [T][ ] borrow book
+2. [D][X] return book (by:Sunday)
+3. [E][ ] project meeting (from: Mon 2pm to:4pm)
+Now you have 3 tasks in the list
+CC:---------------------------------------
+OK, I've marked this task as not done yet:
+[D][ ] return book (by:Sunday)
+CC:---------------------------------------
+Here are the tasks in your list:
+1. [T][ ] borrow book
+2. [D][ ] return book (by:Sunday)
+3. [E][ ] project meeting (from: Mon 2pm to:4pm)
+Now you have 3 tasks in the list
+CC:---------------------------------------
+Oh bye bye! See you soon!
