@@ -1,4 +1,4 @@
-public class Task {
+public abstract class Task {
     public String taskName;
     public boolean status;
 
@@ -22,5 +22,7 @@ public class Task {
             return "[ ] " + taskName;
         }
     }
+
+    public abstract String toSaveString();
 
 }

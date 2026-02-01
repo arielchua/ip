@@ -14,8 +14,9 @@ public class ChuaChua {
 //        int count = 0;
 
         Scanner sc = new Scanner(System.in);
-        //change to arraylist
-        ArrayList<Task> tasks = new ArrayList<Task>();
+
+        Storage storage = new Storage("./data/chua.txt");
+        ArrayList<Task> tasks = storage.load();
 
         while (true) {
             String input = sc.nextLine();
@@ -30,23 +31,27 @@ public class ChuaChua {
                     System.out.println(indent + output);
 
                 } else if (input.startsWith("mark")) {
-                    int toMark = Integer.parseInt(input.substring(5));
+                    int toMark = Integer.parseInt(input.substring(5)) - 1;
                     tasks.get(toMark).mark();
+                    storage.save(tasks);
                     System.out.println(indent + "Great! I've marked this task as done:\n" + tasks.get(toMark));
 
                 } else if (input.startsWith("unmark")) {
-                    int toUnMark = Integer.parseInt(input.substring(7));
+                    int toUnMark = Integer.parseInt(input.substring(7)) - 1;
                     tasks.get(toUnMark).unmark();
+                    storage.save(tasks);
                     System.out.println(indent + "OK, I've marked this task as not done yet:\n" + tasks.get(toUnMark));
 
                 } else if (input.startsWith("todo")) {
                     tasks.add(new ToDos(input.substring(5)));
+                    storage.save(tasks);
                     System.out.println(indent + adding(tasks.get(tasks.size() - 1), tasks));
 
                 } else if (input.startsWith("deadline")) {
                     String rest = input.substring(9);
                     String[] parts = rest.split(" /by ", 2);
                     tasks.add(new DeadLines(parts[0], parts[1]));
+                    storage.save(tasks);
                     System.out.println(indent + adding(tasks.get(tasks.size() - 1), tasks));
 
                 } else if (input.startsWith("event")) {
@@ -54,7 +59,14 @@ public class ChuaChua {
                     String[] firstSplit = rest.split(" /from ", 2);
                     String[] secondSplit = firstSplit[1].split(" /to ", 2);
                     tasks.add(new Events(firstSplit[0], secondSplit[0], secondSplit[1]));
+                    storage.save(tasks);
                     System.out.println(indent + adding(tasks.get(tasks.size() - 1), tasks));
+                } else if (input.startsWith("delete")) {
+                    int toDelete = Integer.parseInt(input.substring(7)) - 1; // "delete " is 7 chars
+                    Task removed = tasks.remove(toDelete);
+                    storage.save(tasks);
+                    System.out.println(indent + "I've removed this task:\n" + removed);
+                    System.out.println(indent + "Now you have " + tasks.size() + " tasks in the list");
                 }
 
             } catch (EmptyDescriptionException e) {
@@ -99,6 +111,9 @@ public class ChuaChua {
         if (!(input.startsWith("todo")
                 || input.startsWith("deadline")
                 || input.startsWith("event")
+                || input.startsWith("mark")
+                || input.startsWith("unmark")
+                || input.startsWith("delete")
                 || input.equals("list")
                 || input.equals("bye"))) {
 
