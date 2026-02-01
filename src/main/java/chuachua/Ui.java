@@ -1,4 +1,4 @@
-import javax.swing.*;
+package chuachua;
 import java.util.Scanner;
 
 public class Ui {
