@@ -45,7 +45,7 @@ public class Storage {
      * Saves tasks from memory onto disk
      * Re-writes the entire task list each time
      */
-    public void save(ArrayList<Task> tasks) throws IOException {
+    public void save(ArrayList<Task> tasks) {
         try {
             ensureFileExists();;
 
@@ -57,8 +57,8 @@ public class Storage {
             Files.write(filePath, lines,
                     StandardOpenOption.CREATE,
                     StandardOpenOption.TRUNCATE_EXISTING);
-        } catch (RuntimeException e) {
-            throw new RuntimeException(e);
+        } catch (IOException e) {
+            System.out.println("Unable to save tasks. Sorry!");
         }
     }
 
