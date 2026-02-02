@@ -53,24 +53,24 @@ public class Parser {
         }
 
         // ----- mark / unmark / delete -----
-        if (input.startsWith("mark")) {
-            String num = input.substring(5).trim();
+        if (input.equals("mark") || input.startsWith("mark ")) {
+            String num = input.length() <= 4 ? "" : input.substring(5).trim();
             if (num.isEmpty()) {
                 throw new EmptyDescriptionException("Please include the task number!");
             }
             return new String[]{"mark", num};
         }
 
-        if (input.startsWith("unmark")) {
-            String num = input.substring(7).trim();
+        if (input.equals("unmark") || input.startsWith("unmark ")) {
+            String num = input.length() <= 6 ? "" : input.substring(7).trim();
             if (num.isEmpty()) {
                 throw new EmptyDescriptionException("Please include the task number!");
             }
             return new String[]{"unmark", num};
         }
 
-        if (input.startsWith("delete")) {
-            String num = input.substring(7).trim();
+        if (input.equals("delete") || input.startsWith("delete ")) {
+            String num = input.length() <= 6 ? "" : input.substring(7).trim();
             if (num.isEmpty()) {
                 throw new EmptyDescriptionException("Please include the task number!");
             }
