@@ -1,8 +1,7 @@
 package chuachua;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class DeadLinesTest {
     @Test
@@ -11,6 +10,13 @@ public class DeadLinesTest {
         d.mark();
         assertTrue(d.status);
     }
+    @Test
+    void toString_doneDeadline_correctFormat() {
+        DeadLines d = new DeadLines("return book", "02/02/2026 1500");
+        d.mark();
+        assertEquals("[D][X] return book (by: Feb 02 2026, 3:00pm)", d.toString());
+    }
+
 
     @Test
     void unMarkDone_taskIsUnMarked() {

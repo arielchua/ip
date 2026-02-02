@@ -7,7 +7,7 @@ public class Events extends Task{
     private static final DateTimeFormatter INPUT =
             DateTimeFormatter.ofPattern("d/M/yyyy HHmm");
     private static final DateTimeFormatter OUTPUT =
-            DateTimeFormatter.ofPattern("MMM dd yyyy, h:mma");
+            DateTimeFormatter.ofPattern(" MMM dd yyyy, h:mma");
 
     public LocalDateTime start;
     public LocalDateTime end;
