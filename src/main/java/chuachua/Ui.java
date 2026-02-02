@@ -1,4 +1,5 @@
 package chuachua;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Ui {
@@ -37,5 +38,17 @@ public class Ui {
     public void showError(String message) {
         System.out.println(INDENT + message);
     }
+
+    /**
+     * Prints a list of all tasks that matches description when using command "find"
+     */
+    public void showFoundTasks(ArrayList<Task> tasks) {
+        System.out.println(INDENT + "Here are the matching tasks in your list:");
+        for (int i = 0; i < tasks.size(); i++) {
+            System.out.println((i + 1) + "." + tasks.get(i));
+        }
+        System.out.println("Found what you're looking for?");
+    }
+
 
 }

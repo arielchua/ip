@@ -12,25 +12,18 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.6.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/ip-shadow.tar" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/ip-shadow.tar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/ip-shadow.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/ip-shadow.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/ip.tar" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/ip.tar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/ip.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/ip.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/duke.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/duke.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/ip.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/ip.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/chuachua.ParserTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/chuachua.ParserTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/chuachua.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/chuachua.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/scripts/ip" beforeDir="false" afterPath="$PROJECT_DIR$/build/scripts/ip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/scripts/ip.bat" beforeDir="false" afterPath="$PROJECT_DIR$/build/scripts/ip.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-chuachua.ParserTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-chuachua.ParserTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ChuaChua.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Parser.class.uniqueId2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/chuachua/ChuaChua.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/chuachua/ChuaChua.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/chuachua/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/chuachua/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/chuachua/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/chuachua/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/chuachua/TaskList.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/chuachua/TaskList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/chuachua/Ui.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/chuachua/Ui.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/shadowJar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/shadowJar/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/chua.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/chua.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chuachua/ChuaChua.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chuachua/ChuaChua.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chuachua/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chuachua/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chuachua/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chuachua/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chuachua/TaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chuachua/TaskList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/chuachua/Ui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chuachua/Ui.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +90,7 @@
     &quot;Gradle.ip [:chuachua.ChuaChua.main()].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;branch-level-9&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/ariel/indiproj/ip&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
