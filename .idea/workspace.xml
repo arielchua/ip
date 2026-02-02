@@ -5,32 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="def33f56-4c42-4d53-93c6-44c318b3d43b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.2/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.6.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/ip-shadow.tar" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/ip-shadow.tar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/ip-shadow.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/ip-shadow.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/ip.tar" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/ip.tar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/ip.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/ip.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/duke.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/duke.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/ip.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/ip.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/chuachua.ParserTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/chuachua.ParserTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/chuachua.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/chuachua.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/scripts/ip" beforeDir="false" afterPath="$PROJECT_DIR$/build/scripts/ip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/scripts/ip.bat" beforeDir="false" afterPath="$PROJECT_DIR$/build/scripts/ip.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-chuachua.ParserTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-chuachua.ParserTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ChuaChua.class.uniqueId0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/Parser.class.uniqueId2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/shadowJar/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/shadowJar/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,32 +55,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ChuaChua.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Duke.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DeadLinesTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DeadLinesTest.markDone_taskIsMarked.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DeadLinesTest.toString_doneDeadline_correctFormat.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.DeadLinesTest.unMarkDone_taskIsUnMarked.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ParserTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ParserTest.parseSavedTask_unknownType_throwsIllegalArgumentException.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ParserTest.parse_deadlineValid_returnsCommandDescBy.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ParserTest.parse_emptyInput_throwsEmptyDescriptionException.executor&quot;: &quot;Debug&quot;,
-    &quot;Gradle.ParserTest.parse_markMissingNumber_throwsEmptyDescriptionException.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ToDoTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ip [:chuachua.ChuaChua.main()].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ariel/indiproj/ip&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ChuaChua.executor": "Run",
+    "Application.Duke.executor": "Run",
+    "Gradle.DeadLinesTest.executor": "Run",
+    "Gradle.DeadLinesTest.markDone_taskIsMarked.executor": "Run",
+    "Gradle.DeadLinesTest.toString_doneDeadline_correctFormat.executor": "Run",
+    "Gradle.DeadLinesTest.unMarkDone_taskIsUnMarked.executor": "Run",
+    "Gradle.ParserTest.executor": "Run",
+    "Gradle.ParserTest.parseSavedTask_unknownType_throwsIllegalArgumentException.executor": "Run",
+    "Gradle.ParserTest.parse_deadlineValid_returnsCommandDescBy.executor": "Run",
+    "Gradle.ParserTest.parse_emptyInput_throwsEmptyDescriptionException.executor": "Debug",
+    "Gradle.ParserTest.parse_markMissingNumber_throwsEmptyDescriptionException.executor": "Run",
+    "Gradle.ToDoTest.executor": "Run",
+    "Gradle.ip [:chuachua.ChuaChua.main()].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "branch-a-codingstandard",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/ariel/indiproj/ip",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.editor"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.ChuaChua">
     <configuration name="ChuaChua" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="chuachua.ChuaChua" />
