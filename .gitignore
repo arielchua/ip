@@ -2,6 +2,7 @@
 /.idea/
 /out/
 /*.iml
+/.idea/workspace.xml
 
 # Gradle build files
 /.gradle/
