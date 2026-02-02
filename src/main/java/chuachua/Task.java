@@ -8,10 +8,16 @@ public abstract class Task {
         this.status = false;
     }
 
+    /**
+     * Marks a Task as done
+     */
     public void mark() {
         this.status = true;
     }
 
+    /**
+     * Marks a Task as not done
+     */
     public void unmark() {
         this.status = false;
     }

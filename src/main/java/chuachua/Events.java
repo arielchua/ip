@@ -24,12 +24,17 @@ public class Events extends Task{
         this.end = LocalDateTime.parse(endRaw.trim(), INPUT);
     }
 
-
+    /**
+     * Returns String representation of Event object
+     */
     @Override
     public String toString() {
         return "[E]" + super.toString() + " (from: " + this.start.format(OUTPUT) + " to:" + this.end.format(OUTPUT) + ")";
     }
 
+    /**
+     * Returns String version of Event object ot save onto disk
+     */
     @Override
     public String toSaveString() {
         return "E | " + (status ? "1" : "0")

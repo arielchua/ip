@@ -18,6 +18,9 @@ public class ChuaChua {
         tasks = new TaskList(storage.load());
     }
 
+    /**
+     * Runs the chatbot and decides the response based on command
+     */
     public void run() {
         ui.showWelcome();
 
