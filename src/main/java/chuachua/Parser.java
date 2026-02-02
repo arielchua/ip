@@ -121,6 +121,15 @@ public class Parser {
             };
         }
 
+        // ----- find -----
+        if (input.startsWith("find")) {
+            String rest = input.substring(5).trim();
+            if (rest.isEmpty()) {
+                throw new EmptyDescriptionException("Please provide the task you are finding!");
+            }
+            return new String[]{"find", rest};
+        }
+
         // ----- unknown command -----
         throw new UnknownCommandException(
                 "Sorry I don't know what you mean :("

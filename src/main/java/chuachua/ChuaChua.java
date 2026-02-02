@@ -1,5 +1,7 @@
 package chuachua;
+
 import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
 
 public class ChuaChua {
 
@@ -37,67 +39,75 @@ public class ChuaChua {
 
                 switch (type) {
 
-                    case "list":
-                        ui.showMessage(tasks.toNumberedList());
-                        break;
+                case "list":
+                    ui.showMessage(tasks.toNumberedList());
+                    break;
 
-                    case "todo": {
-                        Task t = new ToDos(cmd[1]);
-                        tasks.add(t);
-                        storage.save(tasks.getTasks());
-                        ui.showMessage("Okay, I've added the task:\n  " + t
-                                + "\nNow you have " + tasks.size() + " tasks in the list");
-                        break;
-                    }
+                case "todo": {
+                    Task t = new ToDos(cmd[1]);
+                    tasks.add(t);
+                    storage.save(tasks.getTasks());
+                    ui.showMessage("Okay, I've added the task:\n  " + t
+                            + "\nNow you have " + tasks.size() + " tasks in the list");
+                    break;
+                }
 
-                    case "deadline": {
-                        // cmd: ["deadline", description, byRaw]
-                        Task t = new DeadLines(cmd[1], cmd[2]);
-                        tasks.add(t);
-                        storage.save(tasks.getTasks());
-                        ui.showMessage("Okay, I've added the task:\n  " + t
-                                + "\nNow you have " + tasks.size() + " tasks in the list");
-                        break;
-                    }
+                case "deadline": {
+                    // cmd: ["deadline", description, byRaw]
+                    Task t = new DeadLines(cmd[1], cmd[2]);
+                    tasks.add(t);
+                    storage.save(tasks.getTasks());
+                    ui.showMessage("Okay, I've added the task:\n  " + t
+                            + "\nNow you have " + tasks.size() + " tasks in the list");
+                    break;
+                }
 
-                    case "event": {
-                        // cmd: ["event", description, startRaw, endRaw]
-                        Task t = new Events(cmd[1], cmd[2], cmd[3]);
-                        tasks.add(t);
-                        storage.save(tasks.getTasks());
-                        ui.showMessage("Okay, I've added the task:\n  " + t
-                                + "\nNow you have " + tasks.size() + " tasks in the list");
-                        break;
-                    }
+                case "event": {
+                    // cmd: ["event", description, startRaw, endRaw]
+                    Task t = new Events(cmd[1], cmd[2], cmd[3]);
+                    tasks.add(t);
+                    storage.save(tasks.getTasks());
+                    ui.showMessage("Okay, I've added the task:\n  " + t
+                            + "\nNow you have " + tasks.size() + " tasks in the list");
+                    break;
+                }
 
-                    case "mark": {
-                        int idx = Integer.parseInt(cmd[1]) - 1;
-                        Task t = tasks.mark(idx);
-                        storage.save(tasks.getTasks());
-                        ui.showMessage("Great! I've marked this task as done:\n" + t);
-                        break;
-                    }
+                case "mark": {
+                    int idx = Integer.parseInt(cmd[1]) - 1;
+                    Task t = tasks.mark(idx);
+                    storage.save(tasks.getTasks());
+                    ui.showMessage("Great! I've marked this task as done:\n" + t);
+                    break;
+                }
 
-                    case "unmark": {
-                        int idx = Integer.parseInt(cmd[1]) - 1;
-                        Task t = tasks.unmark(idx);
-                        storage.save(tasks.getTasks());
-                        ui.showMessage("OK, I've marked this task as not done yet:\n" + t);
-                        break;
-                    }
+                case "unmark": {
+                    int idx = Integer.parseInt(cmd[1]) - 1;
+                    Task t = tasks.unmark(idx);
+                    storage.save(tasks.getTasks());
+                    ui.showMessage("OK, I've marked this task as not done yet:\n" + t);
+                    break;
+                }
 
-                    case "delete": {
-                        int idx = Integer.parseInt(cmd[1]) - 1;
-                        Task removed = tasks.delete(idx);
-                        storage.save(tasks.getTasks());
-                        ui.showMessage("I've removed this task:\n" + removed
-                                + "\nNow you have " + tasks.size() + " tasks in the list");
-                        break;
-                    }
+                case "delete": {
+                    int idx = Integer.parseInt(cmd[1]) - 1;
+                    Task removed = tasks.delete(idx);
+                    storage.save(tasks.getTasks());
+                    ui.showMessage("I've removed this task:\n" + removed
+                            + "\nNow you have " + tasks.size() + " tasks in the list");
+                    break;
+                }
 
-                    default:
-                        ui.showError("Sorry I don't know what you mean :(");
-                        break;
+                case "find": {
+                    String keyword = cmd[1];
+                    ArrayList<Task> matches = tasks.findTasks(keyword);
+                    ui.showFoundTasks(matches);
+                    break;
+                }
+
+
+                default:
+                    ui.showError("Sorry I don't know what you mean :(");
+                    break;
                 }
 
             } catch (EmptyDescriptionException e) {
