@@ -72,7 +72,7 @@ set CLASSPATH=%APP_HOME%\lib\ip.jar
 
 
 @rem Execute ip
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %IP_OPTS%  -classpath "%CLASSPATH%" seedu.duke.Duke %*
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %IP_OPTS%  -classpath "%CLASSPATH%" chuachua.ChuaChua %*
 
 :end
 @rem End local scope for the variables with windows NT shell
