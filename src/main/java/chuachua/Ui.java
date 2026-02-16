@@ -1,7 +1,12 @@
 package chuachua;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Handles user interaction for the application.
+ * Responsible for displaying messages and reading input from the user.
+ */
 public class Ui {
 
     private static final String INDENT = "CC:---------------------------------------\n";

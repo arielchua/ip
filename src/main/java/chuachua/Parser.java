@@ -1,6 +1,16 @@
 package chuachua;
+
+/**
+ * Parses user input and saved data into commands and {@link Task} objects.
+ */
 public class Parser {
 
+    /**
+     * Parses a saved task line from disk and reconstructs the corresponding {@link Task}.
+     *
+     * @param line The saved line representing a task.
+     * @return The reconstructed task.
+     */
     public static Task parseSavedTask(String line) {
         String[] parts = line.split(" \\| ");
 
@@ -11,20 +21,20 @@ public class Parser {
         Task task;
 
         switch (type) {
-            case "T":
-                task = new ToDos(description);
-                break;
+        case "T":
+            task = new ToDos(description);
+            break;
 
-            case "D":
-                task = new DeadLines(description, parts[3]);
-                break;
+        case "D":
+            task = new DeadLines(description, parts[3]);
+            break;
 
-            case "E":
-                task = new Events(description, parts[3], parts[4]);
-                break;
+        case "E":
+            task = new Events(description, parts[3], parts[4]);
+            break;
 
-            default:
-                throw new IllegalArgumentException("Unknown task type: " + type);
+        default:
+            throw new IllegalArgumentException("Unknown task type: " + type);
         }
 
         if (isDone) {
@@ -114,10 +124,10 @@ public class Parser {
             }
 
             return new String[]{
-                    "event",
-                    first[0].trim(),
-                    second[0].trim(),
-                    second[1].trim()
+                "event",
+                first[0].trim(),
+                second[0].trim(),
+                second[1].trim()
             };
         }
 

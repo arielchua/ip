@@ -1,8 +1,10 @@
 package chuachua;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+// add javadoc comments to everything
 
-public class Events extends Task{
+public class Events extends Task {
 
     private static final DateTimeFormatter INPUT =
             DateTimeFormatter.ofPattern("d/M/yyyy HHmm");
@@ -37,8 +39,8 @@ public class Events extends Task{
      */
     @Override
     public String toSaveString() {
-        return "E | " + (status ? "1" : "0")
-                + " | " + taskName
+        return "E | " + (getStatus() ? "1" : "0")
+                + " | " + getTaskName()
                 + " | " + start.toString()
                 + " | " + end.toString();
     }

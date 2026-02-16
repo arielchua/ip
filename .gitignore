@@ -22,3 +22,5 @@ text-ui-test/EXPECTED-UNIX.TXT
 .gradle/
 build/
 >>>>>>> branch-level-9
+
+*.class

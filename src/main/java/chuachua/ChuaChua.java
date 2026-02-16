@@ -3,6 +3,10 @@ package chuachua;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 
+/**
+ * The main entry point of the chuachua application.
+ * Manages user interaction, task storage, and command execution.
+ */
 public class ChuaChua {
 
     private static final String FILE_PATH = "./data/chua.txt";
@@ -11,6 +15,12 @@ public class ChuaChua {
     private final Storage storage;
     private final TaskList tasks;
 
+    /**
+     * Constructs a ChuaChua instance using the specified file path for storage
+     * Initialises a user interface, storage component, and task list by loading
+     * previously saved tasks from given file
+     * @param filePath
+     */
     public ChuaChua(String filePath) {
         ui = new Ui();
         storage = new Storage(filePath);
@@ -47,8 +57,8 @@ public class ChuaChua {
                     Task t = new ToDos(cmd[1]);
                     tasks.add(t);
                     storage.save(tasks.getTasks());
-                    ui.showMessage("Okay, I've added the task:\n  " + t
-                            + "\nNow you have " + tasks.size() + " tasks in the list");
+                    ui.showMessage("Okay, I've added the task:\n  "
+                            + t + "\nNow you have " + tasks.size() + " tasks in the list");
                     break;
                 }
 
@@ -57,8 +67,8 @@ public class ChuaChua {
                     Task t = new DeadLines(cmd[1], cmd[2]);
                     tasks.add(t);
                     storage.save(tasks.getTasks());
-                    ui.showMessage("Okay, I've added the task:\n  " + t
-                            + "\nNow you have " + tasks.size() + " tasks in the list");
+                    ui.showMessage("Okay, I've added the task:\n  "
+                            + t + "\nNow you have " + tasks.size() + " tasks in the list");
                     break;
                 }
 
@@ -67,8 +77,8 @@ public class ChuaChua {
                     Task t = new Events(cmd[1], cmd[2], cmd[3]);
                     tasks.add(t);
                     storage.save(tasks.getTasks());
-                    ui.showMessage("Okay, I've added the task:\n  " + t
-                            + "\nNow you have " + tasks.size() + " tasks in the list");
+                    ui.showMessage("Okay, I've added the task:\n  "
+                            + t + "\nNow you have " + tasks.size() + " tasks in the list");
                     break;
                 }
 
@@ -92,8 +102,8 @@ public class ChuaChua {
                     int idx = Integer.parseInt(cmd[1]) - 1;
                     Task removed = tasks.delete(idx);
                     storage.save(tasks.getTasks());
-                    ui.showMessage("I've removed this task:\n" + removed
-                            + "\nNow you have " + tasks.size() + " tasks in the list");
+                    ui.showMessage("I've removed this task:\n"
+                            + removed + "\nNow you have " + tasks.size() + " tasks in the list");
                     break;
                 }
 

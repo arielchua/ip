@@ -1,6 +1,10 @@
 package chuachua;
-public class ToDos extends Task{
-    public ToDos (String name) {
+
+/**
+ * Represents a to-do task without a specific date or time.
+ */
+public class ToDos extends Task {
+    public ToDos(String name) {
         super(name);
     }
 
@@ -14,6 +18,6 @@ public class ToDos extends Task{
      */
     @Override
     public String toSaveString() {
-        return "T | " + (status ? "1" : "0") + " | " + taskName;
+        return "T | " + (getStatus() ? "1" : "0") + " | " + getTaskName();
     }
 }

@@ -1,4 +1,5 @@
 package chuachua;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -7,10 +8,15 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Handles loading and saving of task data to the local file system.
+ * Responsible for reading tasks from a data file at startup and
+ * writing updated task information back to disk.
+ */
 public class Storage {
     public final Path filePath;
 
-    public Storage (String relativePath) {
+    public Storage(String relativePath) {
         this.filePath = Paths.get(relativePath);
     }
 
@@ -48,7 +54,8 @@ public class Storage {
      */
     public void save(ArrayList<Task> tasks) {
         try {
-            ensureFileExists();;
+            ensureFileExists();
+            ;
 
             ArrayList<String> lines = new ArrayList<>();
             for (Task task : tasks) {

@@ -1,8 +1,12 @@
 package chuachua;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class DeadLines extends Task{
+/**
+ * Represents DeadLine object
+ */
+public class DeadLines extends Task {
     private static final DateTimeFormatter INPUT =
             DateTimeFormatter.ofPattern("d/M/yyyy HHmm");
 
@@ -11,11 +15,21 @@ public class DeadLines extends Task{
 
     private final LocalDateTime deadline;
 
+    /**
+     * Deadline object constructor
+     * @param name
+     * @param deadline
+     */
     public DeadLines(String name, String deadline) {
         super(name);
         this.deadline = LocalDateTime.parse(deadline, INPUT);
     }
 
+    /**
+     * Deadline object constructor to store as date time format
+     * @param name
+     * @param deadline
+     */
     public DeadLines(String name, LocalDateTime deadline) {
         super(name);
         this.deadline = deadline;
@@ -41,7 +55,8 @@ public class DeadLines extends Task{
      */
     @Override
     public String toSaveString() {
-        return "T | " + (status ? "1" : "0") + " | " + taskName + " | " + deadline;
+        return "T | " + (
+                getStatus() ? "1" : "0") + " | " + getTaskName() + " | " + deadline;
     }
 
 }

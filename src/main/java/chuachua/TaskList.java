@@ -1,6 +1,11 @@
 package chuachua;
+
 import java.util.ArrayList;
 
+/**
+ * Represents a list of Task objects
+ * Provides operations to add, remove, retrieve, and manage tasks
+ */
 public class TaskList {
 
     private final ArrayList<Task> tasks;
@@ -8,6 +13,7 @@ public class TaskList {
     /**
      * Creates a task list from existing list from storage
      * - If loaded from storage
+     *
      * @param tasks
      */
     public TaskList(ArrayList<Task> tasks) {
@@ -15,41 +21,54 @@ public class TaskList {
     }
 
     /**
-     * Creates a new empty task list. */
+     * Creates a new empty task list.
+     */
     public TaskList() {
         this.tasks = new ArrayList<>();
     }
 
-    /** Returns number of tasks. */
+    /**
+     * Returns number of tasks.
+     */
     public int size() {
         return tasks.size();
     }
 
-    /** Adds a task. */
+    /**
+     * Adds a task.
+     */
     public void add(Task task) {
         tasks.add(task);
     }
 
-    /** Deletes and returns the removed task (0-based index). */
+    /**
+     * Deletes and returns the removed task (0-based index).
+     */
     public Task delete(int index) {
         return tasks.remove(index);
     }
 
-    /** Marks a task done (0-based index) and returns the updated task. */
+    /**
+     * Marks a task done (0-based index) and returns the updated task.
+     */
     public Task mark(int index) {
         Task t = tasks.get(index);
         t.mark();
         return t;
     }
 
-    /** Marks a task not done (0-based index) and returns the updated task. */
+    /**
+     * Marks a task not done (0-based index) and returns the updated task.
+     */
     public Task unmark(int index) {
         Task t = tasks.get(index);
         t.unmark();
         return t;
     }
 
-    /** Returns a numbered list string for Ui to display. */
+    /**
+     * Returns a numbered list string for Ui to display.
+     */
     public String toNumberedList() {
         StringBuilder sb = new StringBuilder("Here are the tasks in your list:\n");
         for (int i = 0; i < tasks.size(); i++) {
