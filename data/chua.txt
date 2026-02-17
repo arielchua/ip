@@ -1,4 +1,2 @@
 T | 0 | fgheuirr
-T | 0 | find
-T | 0 | ariel chuia
-T | 0 | ariel chua
+T | 1 | gjhfdjkhg

@@ -124,6 +124,92 @@ public class ChuaChua {
         }
     }
 
+    //GUI version of run so that it returns the line instead of printng it only
+    public String getResponse(String input) {
+        try {
+            String[] cmd = Parser.parse(input);
+            String type = cmd[0];
+
+            if (type.equals("bye")) {
+                return "Bye! Hope to see you again soon!";
+            }
+
+            switch (type) {
+
+            case "list":
+                return tasks.toNumberedList();
+
+            case "todo": {
+                Task t = new ToDos(cmd[1]);
+                tasks.add(t);
+                storage.save(tasks.getTasks());
+                return "Okay, I've added the task:\n  " + t
+                        + "\nNow you have " + tasks.size() + " tasks in the list";
+            }
+
+            case "deadline": {
+                Task t = new DeadLines(cmd[1], cmd[2]);
+                tasks.add(t);
+                storage.save(tasks.getTasks());
+                return "Okay, I've added the task:\n  " + t
+                        + "\nNow you have " + tasks.size() + " tasks in the list";
+            }
+
+            case "event": {
+                Task t = new Events(cmd[1], cmd[2], cmd[3]);
+                tasks.add(t);
+                storage.save(tasks.getTasks());
+                return "Okay, I've added the task:\n  " + t
+                        + "\nNow you have " + tasks.size() + " tasks in the list";
+            }
+
+            case "mark": {
+                int idx = Integer.parseInt(cmd[1]) - 1;
+                Task t = tasks.mark(idx);
+                storage.save(tasks.getTasks());
+                return "Great! I've marked this task as done:\n" + t;
+            }
+
+            case "unmark": {
+                int idx = Integer.parseInt(cmd[1]) - 1;
+                Task t = tasks.unmark(idx);
+                storage.save(tasks.getTasks());
+                return "OK, I've marked this task as not done yet:\n" + t;
+            }
+
+            case "delete": {
+                int idx = Integer.parseInt(cmd[1]) - 1;
+                Task removed = tasks.delete(idx);
+                storage.save(tasks.getTasks());
+                return "I've removed this task:\n" + removed
+                        + "\nNow you have " + tasks.size() + " tasks in the list";
+            }
+
+            case "find": {
+                String keyword = cmd[1];
+                ArrayList<Task> matches = tasks.findTasks(keyword);
+                TaskList temp = new TaskList(matches);
+                return temp.toNumberedList(); // adjust if needed
+            }
+
+            default:
+                return "Sorry I don't know what you mean :(";
+            }
+
+        } catch (EmptyDescriptionException e) {
+            return e.getMessage();
+        } catch (UnknownCommandException e) {
+            return e.getMessage();
+        } catch (NumberFormatException e) {
+            return "Please enter a valid task number.";
+        } catch (IndexOutOfBoundsException e) {
+            return "That task number doesn't exist.";
+        } catch (DateTimeParseException e) {
+            return "Please use date format yyyy-MM-dd HHmm (e.g. 2019-12-02 1800).";
+        }
+    }
+
+
     public static void main(String[] args) {
         new ChuaChua(FILE_PATH).run();
     }
