@@ -1,5 +1,6 @@
 package chuachua;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
@@ -57,6 +58,11 @@ public class MainWindow {
         );
 
         userInput.clear();
+
+        // exit application after "bye"
+        if (input.equalsIgnoreCase("bye")) {
+            Platform.exit();
+        }
     }
 
 }
