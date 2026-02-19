@@ -37,7 +37,7 @@ public class Events extends Task{
      */
     @Override
     public String toSaveString() {
-        return "E | " + (status ? "1" : "0")
+        return "E | " + (isDone ? "1" : "0")
                 + " | " + taskName
                 + " | " + start.toString()
                 + " | " + end.toString();

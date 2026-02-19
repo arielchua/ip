@@ -41,7 +41,7 @@ public class DeadLines extends Task{
      */
     @Override
     public String toSaveString() {
-        return "T | " + (status ? "1" : "0") + " | " + taskName + " | " + deadline;
+        return "T | " + (isDone ? "1" : "0") + " | " + taskName + " | " + deadline;
     }
 
 }
