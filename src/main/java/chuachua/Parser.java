@@ -74,6 +74,12 @@ public class Parser {
         case "find":
             return parseFind(args);
 
+        case "@ai":
+            if (args.isEmpty()) {
+                throw new EmptyDescriptionException("Please provide a query after @ai!");
+            }
+            return new String[]{"@ai", args};
+
         default:
             throw new UnknownCommandException("Sorry I don't know what you mean :(");
         }

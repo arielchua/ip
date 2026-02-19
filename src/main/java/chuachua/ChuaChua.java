@@ -10,6 +10,8 @@ public class ChuaChua {
     private final Ui ui;
     private final Storage storage;
     private final TaskList tasks;
+    private final AiHelper aiHelper = new AiHelper();
+
 
     public ChuaChua(String filePath) {
         ui = new Ui();
@@ -192,6 +194,23 @@ public class ChuaChua {
                 return temp.toNumberedList(); // adjust if needed
             }
 
+            case "@ai": {
+                try {
+                    return askAiAboutFeature(cmd[1], aiHelper);
+                } catch (Exception e) {
+                    e.printStackTrace(); // TEMP: see error in console
+                    return "AI error: " + e.getClass().getSimpleName() + " - " + e.getMessage();
+                }
+            }
+
+//            case "@ai": {
+//                try {
+//                    return askAiAboutFeature(cmd[1], aiHelper);
+//                } catch (Exception e) {
+//                    return "AI is currently unavailable. Please try again later.";
+//                }
+//            }
+
             default:
                 return "Sorry I don't know what you mean :(";
             }
@@ -205,9 +224,33 @@ public class ChuaChua {
         } catch (IndexOutOfBoundsException e) {
             return "That task number doesn't exist.";
         } catch (DateTimeParseException e) {
-            return "Please use date format yyyy-MM-dd HHmm (e.g. 2019-12-02 1800).";
+            return "Please use date format d/M/yyyy HHmm (e.g. 26/09/2005 1800).";
         }
+
     }
+
+    /**
+     * Helps generate an AI help response
+     */
+    private static String askAiAboutFeature(String userPrompt, AiHelper aiHelper) {
+        String systemPrompt =
+                "You are helping users of a CLI task manager app.\n"
+                        + "Answer the user's query about the app's commands and features.\n"
+                        + "Keep the response short (1-2 sentences) and specific.\n"
+                        + "If the feature does not exist, say so and suggest the closest alternative.\n\n"
+                        + "Supported commands:\n"
+                        + "1. todo <description>\n"
+                        + "2. deadline <description> /by <d/M/yyyy HHmm>\n"
+                        + "3. event <description> /from <d/M/yyyy HHmm> /to <d/M/yyyy HHmm>\n"
+                        + "4. list\n"
+                        + "5. mark <task_number>\n"
+                        + "6. unmark <task_number>\n"
+                        + "7. delete <task_number>\n"
+                        + "8. find <keyword>\n";
+
+        return aiHelper.getAiResponse(systemPrompt, userPrompt).aiMessage().text();
+    }
+
 
 
     public static void main(String[] args) {
