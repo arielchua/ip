@@ -42,99 +42,91 @@ public class Parser {
     public static String[] parse(String input)
             throws EmptyDescriptionException, UnknownCommandException {
 
-        assert input != null : "User input should not be null";
+        assert input != null : "Input should not be null";
 
-        input = input.trim();
-
-        if (input.equals("bye")) {
-            return new String[]{"bye"};
+        String trimmed = input.trim();
+        if (trimmed.isEmpty()) {
+            throw new EmptyDescriptionException("Please include a command!");
         }
 
-        if (input.equals("list")) {
-            return new String[]{"list"};
+        //split the input into 2 parts
+        String[] headTail = trimmed.split(" ", 2);
+        String command = headTail[0];
+        String args = headTail.length == 2 ? headTail[1].trim() : "";
+
+        switch (command) {
+        case "bye":
+        case "list":
+            requireNoArgs(command, args);
+            return new String[]{command};
+
+        case "mark":
+        case "unmark":
+        case "delete":
+            return parseIndexCommand(command, args);
+
+        case "todo":
+            return parseTodo(args);
+        case "deadline":
+            return parseDeadline(args);
+        case "event":
+            return parseEvent(args);
+        case "find":
+            return parseFind(args);
+
+        default:
+            throw new UnknownCommandException("Sorry I don't know what you mean :(");
         }
-
-        // ----- mark / unmark / delete -----
-        if (input.equals("mark") || input.startsWith("mark ")) {
-            String num = input.length() <= 4 ? "" : input.substring(5).trim();
-            if (num.isEmpty()) {
-                throw new EmptyDescriptionException("Please include the task number!");
-            }
-            return new String[]{"mark", num};
-        }
-
-        if (input.equals("unmark") || input.startsWith("unmark ")) {
-            String num = input.length() <= 6 ? "" : input.substring(7).trim();
-            if (num.isEmpty()) {
-                throw new EmptyDescriptionException("Please include the task number!");
-            }
-            return new String[]{"unmark", num};
-        }
-
-        if (input.equals("delete") || input.startsWith("delete ")) {
-            String num = input.length() <= 6 ? "" : input.substring(7).trim();
-            if (num.isEmpty()) {
-                throw new EmptyDescriptionException("Please include the task number!");
-            }
-            return new String[]{"delete", num};
-        }
-
-        // ----- todo -----
-        if (input.startsWith("todo")) {
-            String desc = input.substring(4).trim();
-            if (desc.isEmpty()) {
-                throw new EmptyDescriptionException(
-                        "Please include the task description for me!");
-            }
-            return new String[]{"todo", desc};
-        }
-
-        // ----- deadline -----
-        if (input.startsWith("deadline")) {
-            String rest = input.substring(8).trim();
-            String[] parts = rest.split(" /by ", 2);
-            if (parts.length < 2) {
-                throw new EmptyDescriptionException(
-                        "Please include /by for deadline!");
-            }
-            return new String[]{"deadline", parts[0].trim(), parts[1].trim()};
-        }
-
-        // ----- event -----
-        if (input.startsWith("event")) {
-            String rest = input.substring(5).trim();
-            String[] first = rest.split(" /from ", 2);
-            if (first.length < 2) {
-                throw new EmptyDescriptionException(
-                        "Please include /from and /to for event!");
-            }
-
-            String[] second = first[1].split(" /to ", 2);
-            if (second.length < 2) {
-                throw new EmptyDescriptionException(
-                        "Please include /to for event!");
-            }
-
-            return new String[]{
-                    "event",
-                    first[0].trim(),
-                    second[0].trim(),
-                    second[1].trim()
-            };
-        }
-
-        // ----- find -----
-        if (input.startsWith("find")) {
-            String rest = input.substring(5).trim();
-            if (rest.isEmpty()) {
-                throw new EmptyDescriptionException("Please provide the task you are finding!");
-            }
-            return new String[]{"find", rest};
-        }
-
-        // ----- unknown command -----
-        throw new UnknownCommandException(
-                "Sorry I don't know what you mean :("
-        );
     }
+
+    //helper methods for parser
+    private static void requireNoArgs(String command, String args) throws EmptyDescriptionException {
+        if (!args.isEmpty()) {
+            throw new EmptyDescriptionException("Command '" + command + "' does not take arguments.");
+        }
+    }
+
+    private static String[] parseIndexCommand(String command, String args) throws EmptyDescriptionException {
+        if (args.isEmpty()) {
+            throw new EmptyDescriptionException("Please include the task number!");
+        }
+        return new String[]{command, args};
+    }
+
+    private static String[] parseTodo(String args) throws EmptyDescriptionException {
+        if (args.isEmpty()) {
+            throw new EmptyDescriptionException("Please include the task description for me!");
+        }
+        return new String[]{"todo", args};
+    }
+
+    private static String[] parseDeadline(String args) throws EmptyDescriptionException {
+        String[] parts = args.split(" /by ", 2);
+        if (parts.length < 2 || parts[0].trim().isEmpty() || parts[1].trim().isEmpty()) {
+            throw new EmptyDescriptionException("Please include: deadline <desc> /by <time>");
+        }
+        return new String[]{"deadline", parts[0].trim(), parts[1].trim()};
+    }
+
+    private static String[] parseEvent(String args) throws EmptyDescriptionException {
+        String[] first = args.split(" /from ", 2);
+        if (first.length < 2 || first[0].trim().isEmpty()) {
+            throw new EmptyDescriptionException("Please include: event <desc> /from <start> /to <end>");
+        }
+
+        String[] second = first[1].split(" /to ", 2);
+        if (second.length < 2 || second[0].trim().isEmpty() || second[1].trim().isEmpty()) {
+            throw new EmptyDescriptionException("Please include: event <desc> /from <start> /to <end>");
+        }
+
+        return new String[]{"event", first[0].trim(), second[0].trim(), second[1].trim()};
+    }
+
+    private static String[] parseFind(String args) throws EmptyDescriptionException {
+        if (args.isEmpty()) {
+            throw new EmptyDescriptionException("Please provide the task you are finding!");
+        }
+        return new String[]{"find", args};
+    }
+
 }

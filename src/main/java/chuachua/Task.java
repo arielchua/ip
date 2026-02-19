@@ -1,29 +1,29 @@
 package chuachua;
 public abstract class Task {
     public String taskName;
-    public boolean status;
+    public boolean isDone;
 
     public Task(String taskName) {
         this.taskName = taskName;
-        this.status = false;
+        this.isDone = false;
     }
 
     /**
      * Marks a Task as done
      */
     public void mark() {
-        this.status = true;
+        this.isDone = true;
     }
 
     /**
      * Marks a Task as not done
      */
     public void unmark() {
-        this.status = false;
+        this.isDone = false;
     }
 
     public String toString() {
-        if (status) {
+        if (isDone) {
             return "[X] " + taskName;
         } else {
             return "[ ] " + taskName;
