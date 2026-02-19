@@ -22,6 +22,7 @@ public class Main extends Application {
         mainWindow.setChuaChua(new ChuaChua("./data/chua.txt"));
 
         stage.setScene(scene); //attach scene to window
+        stage.setTitle("ChuaChua");
         stage.show();
     }
 }
