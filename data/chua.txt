@@ -1,5 +1,1 @@
-T | 0 | aaa task
-T | 0 | buy milk
-T | 0 | submit report
-T | 0 | wash car
-T | 0 | zzz task
+T | 0 | laundry

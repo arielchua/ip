@@ -36,12 +36,12 @@ public class DialogBox extends HBox {
      * Flips the dialog box such that the image is on the right and text is on the left.
      */
     private void flip() {
-        setAlignment(Pos.TOP_RIGHT);
+        setAlignment(Pos.CENTER_RIGHT);
         // Reverse the children order: [ImageView, Label] -> [Label, ImageView]
         getChildren().setAll(dialog, displayPicture);
 
         // Change bubble color for user (optional but nice)
-        dialog.setStyle("-fx-background-color: #cfe8ff; -fx-background-radius: 12; -fx-padding: 8;");
+        dialog.setStyle("-fx-background-color: #dfa2f5; -fx-background-radius: 12; -fx-padding: 8;");
     }
 
     public static DialogBox getUserDialog(String text, Image img) {

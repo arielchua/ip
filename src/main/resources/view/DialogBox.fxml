@@ -5,19 +5,30 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 
+<?import javafx.scene.shape.Circle?>
 <fx:root type="HBox"
          xmlns="http://javafx.com/javafx/17"
          xmlns:fx="http://javafx.com/fxml"
-         alignment="TOP_LEFT"
+         alignment="CENTER_LEFT"
          spacing="10">
     <padding>
         <Insets top="5" right="5" bottom="5" left="5"/>
     </padding>
 
-    <ImageView fx:id="displayPicture" fitWidth="50" fitHeight="50" preserveRatio="true"/>
+    <ImageView fx:id="displayPicture"
+               fitHeight="50.0"
+               fitWidth="50.0"
+               preserveRatio="true">
+        <clip>
+            <Circle radius="25.0"
+                    centerX="25.0"
+                    centerY="25.0" />
+        </clip>
+    </ImageView>
+
 
     <Label fx:id="dialog"
            wrapText="true"
            maxWidth="350"
-           style="-fx-background-color: #e8e8e8; -fx-background-radius: 12; -fx-padding: 8;"/>
+           style="-fx-background-color: #a2a2f5; -fx-background-radius: 12; -fx-padding: 8;"/>
 </fx:root>

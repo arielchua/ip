@@ -6,10 +6,12 @@
 <VBox xmlns="http://javafx.com/javafx/17"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="chuachua.MainWindow"
+      style="-fx-background-color: #dbc2ff;"
       spacing="10">
 
     <ScrollPane fx:id="scrollPane"
                 fitToWidth="true"
+                style="-fx-background: #eadbff; -fx-background-color: #eadbff;"
                 VBox.vgrow="ALWAYS">
         <content>
             <VBox fx:id="dialogContainer" spacing="5"/>

@@ -26,9 +26,9 @@ public class MainWindow {
 
     // Load images from resources/images
     private final Image userImage = new Image(getClass()
-            .getResource("/images/IMG_2051.png").toExternalForm());
+            .getResource("/images/blankprofile.png").toExternalForm());
     private final Image chuaImage = new Image(getClass()
-            .getResource("/images/IMG_2187.png").toExternalForm());
+            .getResource("/images/doggi.png").toExternalForm());
 
     public void setChuaChua(ChuaChua chuaChua) {
         this.chuaChua = chuaChua;
