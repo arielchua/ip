@@ -42,6 +42,8 @@ public class Parser {
     public static String[] parse(String input)
             throws EmptyDescriptionException, UnknownCommandException {
 
+        assert input != null : "User input should not be null";
+
         input = input.trim();
 
         if (input.equals("bye")) {

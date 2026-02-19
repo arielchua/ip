@@ -11,6 +11,7 @@ public class TaskList {
      * @param tasks
      */
     public TaskList(ArrayList<Task> tasks) {
+        assert tasks != null : "Loaded task list should not be null";
         this.tasks = tasks;
     }
 
@@ -27,16 +28,19 @@ public class TaskList {
 
     /** Adds a task. */
     public void add(Task task) {
+        assert task != null : "Cannot add null task";
         tasks.add(task);
     }
 
     /** Deletes and returns the removed task (0-based index). */
     public Task delete(int index) {
+        assert index >= 0 && index < tasks.size() : "Index out of bounds in delete";
         return tasks.remove(index);
     }
 
     /** Marks a task done (0-based index) and returns the updated task. */
     public Task mark(int index) {
+        assert index >= 0 && index < tasks.size() : "Index out of bounds in mark";
         Task t = tasks.get(index);
         t.mark();
         return t;
@@ -44,6 +48,7 @@ public class TaskList {
 
     /** Marks a task not done (0-based index) and returns the updated task. */
     public Task unmark(int index) {
+        assert index >= 0 && index < tasks.size() : "Index out of bounds in unmark";
         Task t = tasks.get(index);
         t.unmark();
         return t;
@@ -67,6 +72,7 @@ public class TaskList {
      * Returns ArrayList<Task> containing the keyword.
      */
     public ArrayList<Task> findTasks(String keyword) {
+        assert keyword != null : "Search keyword should not be null";
         ArrayList<Task> result = new ArrayList<>();
         for (Task task : tasks) {
             if (task.getTaskName().contains(keyword)) {
