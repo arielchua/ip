@@ -8,7 +8,7 @@ public class DeadLinesTest {
     void markDone_taskIsMarked() {
         DeadLines d = new DeadLines("return book", "02/02/2026 1500");
         d.mark();
-        assertTrue(d.status);
+        assertTrue(d.isDone);
     }
     @Test
     void toString_doneDeadline_correctFormat() {
@@ -23,6 +23,6 @@ public class DeadLinesTest {
         DeadLines d = new DeadLines("return book", "02/02/2026 1500");
         d.mark();
         d.unmark();
-        assertFalse(d.status);
+        assertFalse(d.isDone);
     }
 }

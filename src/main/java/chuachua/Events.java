@@ -50,4 +50,9 @@ public class Events extends Task{
     public LocalDateTime getEnd() {
         return this.end;
     }
+
+    @Override
+    public LocalDateTime getSortDateTime() {
+        return this.start;
+    }
 }

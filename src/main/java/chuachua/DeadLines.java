@@ -44,4 +44,9 @@ public class DeadLines extends Task{
         return "T | " + (isDone ? "1" : "0") + " | " + taskName + " | " + deadline;
     }
 
+    @Override
+    public LocalDateTime getSortDateTime() {
+        return this.deadline;
+    }
+
 }

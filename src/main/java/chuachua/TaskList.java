@@ -1,9 +1,22 @@
 package chuachua;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class TaskList {
 
     private final ArrayList<Task> tasks;
+    private static final Comparator<Task> TASK_ORDER =
+            Comparator.comparing(Task::getSortDateTime,
+                            Comparator.nullsFirst(Comparator.naturalOrder()))
+                    .thenComparing(Task::getTaskName);
+
+
+    /**
+     * Sorts the task in order of TASK_ORDER
+     */
+    private void sortTasks() {
+        tasks.sort(TASK_ORDER);
+    }
 
     /**
      * Creates a task list from existing list from storage
@@ -13,6 +26,7 @@ public class TaskList {
     public TaskList(ArrayList<Task> tasks) {
         assert tasks != null : "Loaded task list should not be null";
         this.tasks = tasks;
+        sortTasks();
     }
 
     /**
@@ -30,6 +44,7 @@ public class TaskList {
     public void add(Task task) {
         assert task != null : "Cannot add null task";
         tasks.add(task);
+        sortTasks();
     }
 
     /** Deletes and returns the removed task (0-based index). */

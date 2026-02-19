@@ -1,4 +1,7 @@
 package chuachua;
+
+import java.time.LocalDateTime;
+
 public abstract class Task {
     public String taskName;
     public boolean isDone;
@@ -6,6 +9,13 @@ public abstract class Task {
     public Task(String taskName) {
         this.taskName = taskName;
         this.isDone = false;
+    }
+
+    /**
+     * Gives a basic Task null as its deadline (no deadline)
+     */
+    public LocalDateTime getSortDateTime() {
+        return null; // default: tasks without date/time (to do tasks)
     }
 
     /**
