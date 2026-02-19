@@ -79,6 +79,14 @@ public class TaskList {
         return sb.toString();
     }
 
+    public String toFilteredList() {
+        StringBuilder sb = new StringBuilder("Here are the corresponding tasks in your list:\n");
+        for (int i = 0; i < tasks.size(); i++) {
+            sb.append(i + 1).append(". ").append(tasks.get(i)).append("\n");
+        }
+        return sb.toString();
+    }
+
     public ArrayList<Task> getTasks() {
         return tasks;
     }

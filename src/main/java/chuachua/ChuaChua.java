@@ -191,7 +191,7 @@ public class ChuaChua {
                 String keyword = cmd[1];
                 ArrayList<Task> matches = tasks.findTasks(keyword);
                 TaskList temp = new TaskList(matches);
-                return temp.toNumberedList(); // adjust if needed
+                return temp.toFilteredList(); // adjust if needed
             }
 
             case "@ai": {
