@@ -195,11 +195,16 @@ public class ChuaChua {
             }
 
             case "@ai": {
+                String key = System.getenv("LLM_API_KEY");
+
+                if (key == null || key.isBlank()) {
+                    return "AI is unavailable (LLM_API_KEY not configured).";
+                }
+
                 try {
                     return askAiAboutFeature(cmd[1], aiHelper);
                 } catch (Exception e) {
-                    e.printStackTrace(); // TEMP: see error in console
-                    return "AI error: " + e.getClass().getSimpleName() + " - " + e.getMessage();
+                    return "AI is currently unavailable. Please try again later.";
                 }
             }
 
