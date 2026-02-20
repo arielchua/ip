@@ -1,30 +1,58 @@
-# Duke User Guide
+# ChuaChua User Guide
 
-// Update the title above to match the actual product name
+![ChuaChua Screenshot](Ui.png)
 
-// Product screenshot goes here
+ChuaChua is a lightweight task management application designed for users who prefer typing commands efficiently while still benefiting from a clean graphical interface.
 
-// Product intro goes here
+It supports:
+- Todo Tasks
+- DeadLine Tasks
+- Event Tasks
+- Automatic sorting by deadline
+- Keyword Search
+- AI-assisted help
 
-## Adding deadlines
+## Features
+### Adding a ToDo
+Adds a task without a deadline\
+Format: `todo <description>`\
+Example: `todo Read CS2103 notes`
 
-// Describe the action and its outcome.
+### Adding a Deadline
+Adds a task with a deadline\
+Format: `deadline <description> /by <d/M/yyyy HHmm>`\
+Example: `deadline Submit iP /by 26/09/2025 2359`
 
-// Give examples of usage
+### Adding an Event
+Adds a task with a start and end time.\
+Format: `event <description> /from <d/M/yyyy HHmm> /to <d/M/yyyy HHmm>`\
+Example: `event Project meeting /from 20/09/2025 1400 /to 20/09/2025 1600`
 
-Example: `keyword (optional arguments)`
+### Listing Tasks
+Tasks are automatically sorted by increasing deadline.
+- ToDo appeads first
+- Deadlines are sorted by date/time
+- Events are sorted by start date/time
+- Indexes are updated according to latest sorted order\
+Format: `list`
 
-// A description of the expected outcome goes here
+### Marking/Unmarking a Task
+Marks a Task as completed/incomplete.\
+Format: `mark <task_number>` or `unmark <task_number>`
 
-```
-expected output
-```
+### Deleting a Task
+Deletes a Task from the list.\
+Format: `delete <task_number>`
 
-## Feature ABC
+### Finding Tasks
+Finds all tasks that cintains a keyword\
+Format: `find <keyword>`
 
-// Feature details
+### AI-assisted help
+Provides AI-generated assistance about supported commands.\
+Format: `@ai <query>` \
+Example:
+`
+@ai how do i add a deadline?
+`
 
-
-## Feature XYZ
-
-// Feature details
