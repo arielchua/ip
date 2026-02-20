@@ -1,5 +1,7 @@
 # ChuaChua User Guide
 
+![ChuaChua Screenshot](Ui.png)
+
 ChuaChua is a lightweight task management application designed for users who prefer typing commands efficiently while still benefiting from a clean graphical interface.
 
 It supports:
