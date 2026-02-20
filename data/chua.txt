@@ -1,2 +1,2 @@
-E | 0 | Team meeting | 2025-09-20T14:00 | 2025-09-20T16:00
+T | 0 | Read CS2103 notes
 T | 0 | Submit iP | 2025-09-26T23:59

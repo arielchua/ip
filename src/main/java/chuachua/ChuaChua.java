@@ -203,14 +203,6 @@ public class ChuaChua {
                 }
             }
 
-//            case "@ai": {
-//                try {
-//                    return askAiAboutFeature(cmd[1], aiHelper);
-//                } catch (Exception e) {
-//                    return "AI is currently unavailable. Please try again later.";
-//                }
-//            }
-
             default:
                 return "Sorry I don't know what you mean :(";
             }

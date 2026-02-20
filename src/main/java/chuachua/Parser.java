@@ -86,12 +86,18 @@ public class Parser {
     }
 
     //helper methods for parser
+    /**
+     * Validates that a command does not contain any additional arguments.
+     */
     private static void requireNoArgs(String command, String args) throws EmptyDescriptionException {
         if (!args.isEmpty()) {
             throw new EmptyDescriptionException("Command '" + command + "' does not take arguments.");
         }
     }
 
+    /**
+     * Parses commands that require a single task index (e.g., mark, unmark, delete).
+     */
     private static String[] parseIndexCommand(String command, String args) throws EmptyDescriptionException {
         if (args.isEmpty()) {
             throw new EmptyDescriptionException("Please include the task number!");
@@ -99,6 +105,9 @@ public class Parser {
         return new String[]{command, args};
     }
 
+    /**
+     * Parses a todo command.
+     */
     private static String[] parseTodo(String args) throws EmptyDescriptionException {
         if (args.isEmpty()) {
             throw new EmptyDescriptionException("Please include the task description for me!");
@@ -106,6 +115,9 @@ public class Parser {
         return new String[]{"todo", args};
     }
 
+    /**
+     * Parses a deadline command.
+     */
     private static String[] parseDeadline(String args) throws EmptyDescriptionException {
         String[] parts = args.split(" /by ", 2);
         if (parts.length < 2 || parts[0].trim().isEmpty() || parts[1].trim().isEmpty()) {
@@ -114,6 +126,9 @@ public class Parser {
         return new String[]{"deadline", parts[0].trim(), parts[1].trim()};
     }
 
+    /**
+     * Parses an event command.
+     */
     private static String[] parseEvent(String args) throws EmptyDescriptionException {
         String[] first = args.split(" /from ", 2);
         if (first.length < 2 || first[0].trim().isEmpty()) {
@@ -128,6 +143,9 @@ public class Parser {
         return new String[]{"event", first[0].trim(), second[0].trim(), second[1].trim()};
     }
 
+    /**
+     * Parses a find command.
+     */
     private static String[] parseFind(String args) throws EmptyDescriptionException {
         if (args.isEmpty()) {
             throw new EmptyDescriptionException("Please provide the task you are finding!");
