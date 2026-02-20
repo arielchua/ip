@@ -1,26 +1,57 @@
-# Duke project template
+# ChuaChua User Guide
 
-This is a project template for a greenfield Java project. It's named after the Java mascot _Duke_. Given below are instructions on how to use it.
+![ChuaChua Screenshot](Ui.png)
 
-## Setting up in Intellij
+ChuaChua is a lightweight task management application designed for users who prefer typing commands efficiently while still benefiting from a clean graphical interface.
 
-Prerequisites: JDK 17, update Intellij to the most recent version.
+It supports:
+- Todo Tasks
+- DeadLine Tasks
+- Event Tasks
+- Automatic sorting by deadline
+- Keyword Search
+- AI-assisted help
 
-1. Open Intellij (if you are not in the welcome screen, click `File` > `Close Project` to close the existing project first)
-1. Open the project into Intellij as follows:
-   1. Click `Open`.
-   1. Select the project directory, and click `OK`.
-   1. If there are any further prompts, accept the defaults.
-1. Configure the project to use **JDK 17** (not other versions) as explained in [here](https://www.jetbrains.com/help/idea/sdk.html#set-up-jdk).<br>
-   In the same dialog, set the **Project language level** field to the `SDK default` option.
-1. After that, locate the `src/main/java/Duke.java` file, right-click it, and choose `Run Duke.main()` (if the code editor is showing compile errors, try restarting the IDE). If the setup is correct, you should see something like the below as the output:
-   ```
-   Hello from
-    ____        _        
-   |  _ \ _   _| | _____ 
-   | | | | | | | |/ / _ \
-   | |_| | |_| |   <  __/
-   |____/ \__,_|_|\_\___|
-   ```
+## Features
+### Adding a ToDo
+Adds a task without a deadline\
+Format: `todo <description>`\
+Example: `todo Read CS2103 notes`
 
-**Warning:** Keep the `src\main\java` folder as the root folder for Java files (i.e., don't rename those folders or move Java files to another folder outside of this folder path), as this is the default location some tools (e.g., Gradle) expect to find Java files.
+### Adding a Deadline
+Adds a task with a deadline\
+Format: `deadline <description> /by <d/M/yyyy HHmm>`\
+Example: `deadline Submit iP /by 26/09/2025 2359`
+
+### Adding an Event
+Adds a task with a start and end time.\
+Format: `event <description> /from <d/M/yyyy HHmm> /to <d/M/yyyy HHmm>`\
+Example: `event Project meeting /from 20/09/2025 1400 /to 20/09/2025 1600`
+
+### Listing Tasks
+Tasks are automatically sorted by increasing deadline.
+- ToDo appeads first
+- Deadlines are sorted by date/time
+- Events are sorted by start date/time
+- Indexes are updated according to latest sorted order\
+Format: `list`
+
+### Marking/Unmarking a Task
+Marks a Task as completed/incomplete.\
+Format: `mark <task_number>` or `unmark <task_number>`
+
+### Deleting a Task
+Deletes a Task from the list.\
+Format: `delete <task_number>`
+
+### Finding Tasks
+Finds all tasks that cintains a keyword\
+Format: `find <keyword>`
+
+### AI-assisted help
+Provides AI-generated assistance about supported commands.\
+Format: `@ai <query>` \
+Example:
+`
+@ai how do i add a deadline?
+`
